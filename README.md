@@ -1,6 +1,10 @@
 # DI - InsideConstruct
 
-[Extended InsideConstruct ](docs/ExtendedIC.md)
+## Документация
+
+* [Extended InsideConstruct ](docs/ExtendedIC.md)
+
+* [Стандарты](https://github.com/avz-cmf/zaboy-skeleton/blob/master/docs/Standarts.md)
 
 ##Быстрый старт
 
