@@ -1,5 +1,7 @@
 # DI - InsideConstruct
 
+[Extended InsideConstruct ](docs/ExtendedIC.md)
+
 ##Быстрый старт
 
 ###Обычная практика

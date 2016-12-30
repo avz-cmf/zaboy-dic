@@ -10,7 +10,7 @@ namespace zaboy\dic;
 
 
 use Composer\Script\Event;
-use zaboy\installer\Instal\AbstractCommand;
+use zaboy\installer\Install\AbstractCommand;
 
 class InstallCommands extends AbstractCommand
 {

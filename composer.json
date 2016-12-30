@@ -21,19 +21,19 @@
     "zendframework/zend-diactoros": "^1.1",
     "zendframework/zend-config": "^2.6",
     "zendframework/zend-stdlib": "^3",
-    "avz-cmf/zaboy-install": "^1.0"
+    "avz-cmf/zaboy-installer": "^1.0.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.0"
   },
   "autoload": {
     "psr-4": {
-      "zaboy\\skeleton\\": "src/"
+      "zaboy\\dic\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "zaboy\\test\\skeleton\\": "test/"
+      "zaboy\\test\\dic\\": "tests/src"
     }
   },
   "scripts": {
