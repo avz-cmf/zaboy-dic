@@ -65,8 +65,7 @@ class InsideConstruct
 
         //I need your __construct params
         //$reflectionClass->getMethod('__construct');
-        InsideConstruct::checkConstruct(
-            ($refConstruct = $reflectionClass->getConstructor()));
+        InsideConstruct::checkConstruct(($refConstruct = $reflectionClass->getConstructor()));
 
         $refParams = $refConstruct->getParameters();
         // $refParams array of ReflectionParameter
@@ -103,13 +102,13 @@ class InsideConstruct
 
         if (isset($refMethod) && $refMethod->isPublic()) {
             $refMethod->invoke($object, $paramValue);
-        } else if (isset($refMethod) && ($refMethod->isPrivate() || $refMethod->isProtected())) {
+        } elseif (isset($refMethod) && ($refMethod->isPrivate() || $refMethod->isProtected())) {
             $refMethod->setAccessible(true);
             $refMethod->invoke($object, $paramValue);
             $refMethod->setAccessible(false);
-        } else if (isset($refProperty) && $refProperty->isPublic()) {
+        } elseif (isset($refProperty) && $refProperty->isPublic()) {
             $refProperty->setValue($object, $paramValue);
-        } else if (isset($refProperty) && ($refProperty->isPrivate() || $refProperty->isProtected())) {
+        } elseif (isset($refProperty) && ($refProperty->isPrivate() || $refProperty->isProtected())) {
             $refProperty->setAccessible(true);
             $refProperty->setValue($object, $paramValue);
             $refProperty->setAccessible(false);
@@ -128,8 +127,7 @@ class InsideConstruct
         /* @var $reflectionClass \ReflectionClass */
 
         $refParentClass = $reflectionClass->getParentClass();
-        InsideConstruct::checkConstruct(
-            ($refParentConstruct = $refParentClass->getConstructor()));
+        InsideConstruct::checkConstruct(($refParentConstruct = $refParentClass->getConstructor()));
 
         $refParams = $refParentConstruct->getParameters();
 
@@ -154,15 +152,13 @@ class InsideConstruct
 
         //I need your __construct params
         //$reflectionClass->getMethod('__construct');
-        InsideConstruct::checkConstruct(
-            ($refConstruct = $reflectionClass->getConstructor()));
+        InsideConstruct::checkConstruct(($refConstruct = $reflectionClass->getConstructor()));
 
         $refParams = $refConstruct->getParameters();
         // $refParams array of ReflectionParameter
 
         $refParentClass = $reflectionClass->getParentClass();
-        InsideConstruct::checkConstruct(
-            ($refParentConstruct = $refParentClass->getConstructor()));
+        InsideConstruct::checkConstruct(($refParentConstruct = $refParentClass->getConstructor()));
 
         $refParentParams = $refParentConstruct->getParameters();
         foreach ($refParams as $refParam) {
@@ -180,9 +176,9 @@ class InsideConstruct
                 $result[$paramName] = $paramValue;
                 InsideConstruct::setValue($reflectionClass, $paramName, $paramValue, $object);
             } else {
-                if (isset($mapping[$paramName])){
+                if (isset($mapping[$paramName])) {
                     $loadParams[$mapping[$paramName]] = $paramValue;
-                }else {
+                } else {
                     $loadParams[$paramName] = $paramValue;
                 }
             }
